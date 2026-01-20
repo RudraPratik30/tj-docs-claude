@@ -1,0 +1,7 @@
+ToolJet
+HarperDB
+DALL-E
+Pinecone
+Upsert
+upsert
+Plivo
