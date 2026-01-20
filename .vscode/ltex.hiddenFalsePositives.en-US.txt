@@ -1,0 +1,3 @@
+{"rule":"SEND_PRP_AN_EMAIL","sentence":"^\\QIf you have any questions feel free to join our Slack Community or send us an email at hello@tooljet.com.\\E$"}
+{"rule":"COMMA_PARENTHESIS_WHITESPACE","sentence":"^\\Q<img style={{ border:'0', marginBottom:'15px'}} className=\"screenshot-full\" src=\"/img/datasource-reference/appwrite/list-v3.png\" alt=\"Appwrite List\" />\\E$"}
+{"rule":"COMMA_PARENTHESIS_WHITESPACE","sentence":"^\\Q<img style={{ border:'0', marginBottom:'15px'}} className=\"screenshot-full\" src=\"/img/datasource-reference/appwrite/get-v3.png\" alt=\"Appwrite get\" />\\E$"}

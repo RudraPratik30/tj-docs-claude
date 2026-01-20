@@ -5,3 +5,8 @@ Pinecone
 Upsert
 upsert
 Plivo
+Appwrite
+className
+marginBottom
+img
+datasource-reference
