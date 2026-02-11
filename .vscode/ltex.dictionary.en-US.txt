@@ -10,3 +10,4 @@ className
 marginBottom
 img
 datasource-reference
+img-full
