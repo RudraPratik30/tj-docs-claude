@@ -551,6 +551,64 @@ Continue pattern...
 
 --- -->
 
+## Card Components for MDX Pages
+
+When a documentation page needs navigational cards (e.g., overview pages, landing pages, feature grids), use the standardized card components. Reference template: `try-tooljet-cards-template.mdx` in the project root.
+
+### Requirements
+- File must be `.mdx` (not `.md`)
+- Must import Tailwind and Docusaurus Link at the top:
+  ```jsx
+  import '../../homepage.css';  // adjust relative path based on file location
+  import Link from '@docusaurus/Link';
+  ```
+
+### Available Components
+
+| Component | Purpose | Icon Source | Height |
+|-----------|---------|------------|--------|
+| `Card` | Base wrapper (required by all variants) | N/A | Varies |
+| `SetupCard` | Large card with icon, title, description | `/img/setup/icons/<iconId>.svg` | 280px |
+| `PluginCard` | Compact single-row card with icon and title | `/img/marketplace/plugins/<pluginId>/icon.svg` | 72px |
+| `CardSection` | Grid wrapper for grouping cards | N/A | Auto |
+
+### Key Props
+
+- **`href`**: Internal path (`/docs/setup/try-tooljet`) or external URL
+- **`isExternal={true}`**: Opens link in new tab (for external URLs like AWS/Azure marketplace)
+- **`cols={2}`** on `CardSection`: Switches to 2-column grid (default is 3)
+
+### Usage Pattern
+
+```jsx
+{/* 3-column grid (default) */}
+<CardSection description="Get up and running quickly">
+    <SetupCard iconId="try-tooljet" title="Try ToolJet" description="..." href="/docs/setup/try-tooljet" />
+    <SetupCard iconId="ecs" title="AWS Marketplace" description="..." href="https://..." isExternal={true} />
+    <SetupCard iconId="azure-marketplace" title="Azure Marketplace" description="..." href="https://..." isExternal={true} />
+</CardSection>
+
+{/* 2-column grid */}
+<CardSection description="Prerequisites" cols={2}>
+    <SetupCard iconId="system-requirements" title="System Requirements" description="..." href="/docs/setup/system-requirements" />
+    <SetupCard iconId="choose-your-tooljet" title="Choose Your ToolJet" description="..." href="/docs/setup/choose-your-tooljet" />
+</CardSection>
+
+{/* Plugin cards */}
+<CardSection title="AI Plugins">
+    <PluginCard pluginId="anthropic" title="Anthropic" href="/docs/marketplace/plugins/marketplace-plugin-anthropic" />
+</CardSection>
+```
+
+### Adding New Icons
+Place SVG files in `docs/static/img/setup/icons/` (for SetupCard) or `docs/static/img/marketplace/plugins/<pluginId>/` (for PluginCard).
+
+### Existing Pages Using Cards
+- Setup overview: `docs/versioned_docs/version-3.16.0-LTS/setup/overview/index.mdx`
+- Marketplace overview: `docs/versioned_docs/version-3.16.0-LTS/marketplace/marketplace_overview.mdx`
+
+---
+
 ## Code-to-Documentation Checklist
 
 When generating documentation from code, verify:
