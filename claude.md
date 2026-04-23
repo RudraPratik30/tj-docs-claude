@@ -151,7 +151,7 @@ and make a table in the following format for each property
 
 | Property | Description | Expected Value |
 
-### Events
+## Events
 
 | Event | Description |
 |-------|-------------|
